@@ -149,8 +149,6 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-//array[array.length - 1]
-
 function getLastReview(array) {
   return `${array[array.length - 1].name} gave the restaurant a ${array[array.length - 1].rating} star review, and their feedback was: ${array[array.length - 1].feedback}`;
 } 
@@ -174,9 +172,17 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array, rating) {
+    const reviewArray = [];
+    for (let i = 0; i < array.length; i++) {
+      if (Math.floor(array[i].rating) === rating) {
+        reviewArray.push(array[i]);
+      }
+    }
+    return reviewArray;
   }
+
+  console.log('stretch 1', getReviewByRating(reviews, 4));
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -192,9 +198,17 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(array) {
+    const longReviewArray = [];
+    for (let i = 0; i < array.length; i++) {
+       if (array[i].feedback.split(' ').length > 15) {
+         longReviewArray.push(array[i]);
+       }
+    }
+    return longReviewArray;
   }
+
+  console.log('stretch 2', getLongReviews(reviews));
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -215,10 +229,18 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(odometer) {
+    const car = {};
+    car.odometer = odometer;
+    car.drive = function(distance) {
+      this.odometer = this.odometer + distance;
+      return this.odometer;
+    }
+    return car;
 }
+
+const car1 = carMaker(10);
+console.log('stretch 3', car1.drive(100));
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
