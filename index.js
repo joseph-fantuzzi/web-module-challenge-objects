@@ -3,8 +3,8 @@
 /*When doing these tasks, we recommend using console.log to test the output of your code to make sure it works correctly.*/
 
 ///////////////Menu Items (MVP)///////////////////
-const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
+// const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
+// const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
@@ -31,6 +31,14 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+const soup = createMenuItem('soup', 4, 'Lunch');
+const latte = createMenuItem('Cafe Latte', 4, 'Drinks');
+const breakfastBurrito = createMenuItem('Breakfast Burrito', 16, 'Breakfast');
+
+console.log('task 1b');
+console.log(soup);
+console.log(latte);
+console.log(breakfastBurrito);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -49,17 +57,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
-
-  //method goes here
-  discount: function() {
-
+  discount: function(string) {
+    if (string === 'teacher' || string === 'student') {
+      return this.price - this.price * 0.25;
+    } else if (string === 'public') {
+      return this.price - this.price * 0.1;
+    }
   }
 }
 
-
-
-
+console.log('task 2');
+console.log(burger.discount('teacher'));
+console.log(burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
