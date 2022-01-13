@@ -88,6 +88,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
+console.log('task 3', reviews[5].feedback);
 
 
 
@@ -97,6 +98,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
+reviews[reviews.length - 1].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+console.log('task 4', reviews);
 
 
 
@@ -111,9 +114,11 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 function addReview(array, name, rating, feedback){
-  /*Your Code Here */
-  array.push({})
+  array.push({name, rating, feedback});
+  return array;
 }
+
+console.log('task 5', addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
